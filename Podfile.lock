@@ -1,0 +1,40 @@
+PODS:
+  - Alamofire (4.3.0)
+  - BNRDeferred (3.0.0)
+  - BSWFoundation (1.0.1):
+    - Alamofire (~> 4.3.0)
+    - BNRDeferred (= 3.0.0)
+    - Decodable (~> 0.5)
+    - KeychainAccess (~> 3.0.1)
+  - Decodable (0.5)
+  - HanekeSwift (0.10.1)
+  - KeychainAccess (3.0.1)
+  - NVActivityIndicatorView (3.5.2)
+
+DEPENDENCIES:
+  - BSWFoundation
+  - HanekeSwift (from `https://github.com/Haneke/HanekeSwift.git`, commit `74f34c1c1845907927de5e71ea621399c1f603e0`)
+  - NVActivityIndicatorView
+
+EXTERNAL SOURCES:
+  HanekeSwift:
+    :commit: 74f34c1c1845907927de5e71ea621399c1f603e0
+    :git: https://github.com/Haneke/HanekeSwift.git
+
+CHECKOUT OPTIONS:
+  HanekeSwift:
+    :commit: 74f34c1c1845907927de5e71ea621399c1f603e0
+    :git: https://github.com/Haneke/HanekeSwift.git
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  BNRDeferred: 0757b256613622d3f3db21bd126ba63031ca3deb
+  BSWFoundation: b6633919abf3549e3d43bb04e3263a0139621c9b
+  Decodable: 7c90acc68d357b71d0d6efc120faf9c53c644b7e
+  HanekeSwift: 4113367892828e7700d24a384027de6ebc79aad1
+  KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
+  NVActivityIndicatorView: 8c10abd410a0657afd21aa853373e1a3cfc25e7f
+
+PODFILE CHECKSUM: 170be04915d6525afd033137864ef3d57e7fd2fb
+
+COCOAPODS: 1.2.0
