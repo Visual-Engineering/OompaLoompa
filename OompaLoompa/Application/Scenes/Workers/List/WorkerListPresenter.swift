@@ -54,14 +54,15 @@ extension WorkerListPresenter: WorkerListPresenterProtocol {
 
     func viewDidLoad() {
         view.showActivityIndicator()
-
-        let _ = interactor.retrieveData().upon(.main) { result in
+        
+        interactor.retrieveData().map(upon: .main) { (workerModelArray) -> WorkerListViewModel in
+            return WorkerListViewModel(workers: workerModelArray.map { $0.toViewModel() })
+        }.upon(.main) { (result) in
             switch result {
             case .failure(let error):
                 self.state = .error(error)
             case .success(let workers):
-                let workersVM = workers.map { $0.toViewModel() }
-                self.viewModel = WorkerListViewModel(workers: workersVM)
+                self.viewModel = workers
             }
         }
     }
