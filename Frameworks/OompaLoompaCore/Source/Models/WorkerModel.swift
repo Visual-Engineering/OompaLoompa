@@ -9,7 +9,7 @@
 import Foundation
 import Decodable
 
-enum Gender: String {
+public enum Gender: String {
     case male
     case female
     case shemale
@@ -17,27 +17,27 @@ enum Gender: String {
 
 extension Gender {
 
-    var imageName: String {
+    public var imageName: String {
         return rawValue
     }
 }
 
-struct WorkerModel {
+public struct WorkerModel {
 
     //MARK: - Stored properties
-    let id: Int
-    let firstName: String
-    let lastName: String
-    let email: String
-    let profession: String
-    let gender: Gender
-    let thumbnail: String
-    let imageURLPath: String
+    public let id: Int
+    public let firstName: String
+    public let lastName: String
+    public let email: String
+    public let profession: String
+    public let gender: Gender
+    public let thumbnail: String
+    public let imageURLPath: String
 }
 
 extension WorkerModel: Decodable {
 
-    static func decode(_ json: Any) throws -> WorkerModel {
+    public static func decode(_ json: Any) throws -> WorkerModel {
         return try WorkerModel(id: json => "id",
                                firstName: json => "first_name",
                                lastName: json => "last_name",

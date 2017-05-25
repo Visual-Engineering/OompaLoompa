@@ -8,7 +8,7 @@
 
 import Foundation
 
-let ModuleName = "com.ancertios"
+let ModuleName = "com.oompaLoompaios"
 
 func submoduleName(_ submodule : String) -> String {
     return ModuleName + "." + submodule

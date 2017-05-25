@@ -10,16 +10,20 @@ PODS:
   - HanekeSwift (0.10.1)
   - KeychainAccess (3.0.1)
   - NVActivityIndicatorView (3.5.2)
+  - OompaLoompaCore (0.1.0):
+    - BSWFoundation
 
 DEPENDENCIES:
-  - BSWFoundation
   - HanekeSwift (from `https://github.com/Haneke/HanekeSwift.git`, commit `74f34c1c1845907927de5e71ea621399c1f603e0`)
   - NVActivityIndicatorView
+  - OompaLoompaCore (from `Frameworks/OompaLoompaCore`)
 
 EXTERNAL SOURCES:
   HanekeSwift:
     :commit: 74f34c1c1845907927de5e71ea621399c1f603e0
     :git: https://github.com/Haneke/HanekeSwift.git
+  OompaLoompaCore:
+    :path: Frameworks/OompaLoompaCore
 
 CHECKOUT OPTIONS:
   HanekeSwift:
@@ -34,7 +38,8 @@ SPEC CHECKSUMS:
   HanekeSwift: 4113367892828e7700d24a384027de6ebc79aad1
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
   NVActivityIndicatorView: 8c10abd410a0657afd21aa853373e1a3cfc25e7f
+  OompaLoompaCore: 682dce60d1183cb9e5677f48123610b517fb0213
 
-PODFILE CHECKSUM: 170be04915d6525afd033137864ef3d57e7fd2fb
+PODFILE CHECKSUM: 98f6ba13d3fd4e62521584307c0cb243c804015a
 
 COCOAPODS: 1.2.0

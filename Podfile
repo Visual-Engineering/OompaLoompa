@@ -6,7 +6,7 @@ target 'OompaLoompa' do
   use_frameworks!
 
   # Pods for OompaLoompa
-  pod 'BSWFoundation'
+  pod 'OompaLoompaCore',    :path => 'Frameworks/OompaLoompaCore'
   pod 'NVActivityIndicatorView'
   pod 'HanekeSwift', :git => 'https://github.com/Haneke/HanekeSwift.git', :commit => '74f34c1c1845907927de5e71ea621399c1f603e0'
   

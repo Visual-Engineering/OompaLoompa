@@ -8,6 +8,7 @@
 
 import Foundation
 import Deferred
+import OompaLoompaCore
 
 protocol WorkerListPresenterProtocol {
     func viewDidLoad()
