@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, '10.0'
   spec.framework    = 'Foundation'
   spec.requires_arc = true
-  spec.source_files = 'Source/**/*.{h,m,swift}'
+  spec.source_files = '**/*.{h,m,swift}'
   spec.source       = { :path => '.' }
   spec.dependency 'BSWFoundation'
 
