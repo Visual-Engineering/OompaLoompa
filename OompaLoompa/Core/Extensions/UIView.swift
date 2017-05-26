@@ -34,4 +34,10 @@ extension UIView {
 
         view.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    public func fitSize(widthConstraint width: CGFloat) -> CGSize {
+        let targetSize = CGSize(width: width, height: 1000)
+        let actualSize = systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: UILayoutPriorityRequired, verticalFittingPriority: UILayoutPriorityFittingSizeLevel)
+        return actualSize
+    }
 }

@@ -28,10 +28,14 @@
 		785FFF421ECEE95600FF61BA /* WorkerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FFF3C1ECEE95600FF61BA /* WorkerDetailViewModel.swift */; };
 		78BBD3161ECDA32000F19D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BBD3151ECDA32000F19D8A /* AppDelegate.swift */; };
 		78BBD31D1ECDA32000F19D8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78BBD31C1ECDA32000F19D8A /* Assets.xcassets */; };
-		78BBD32B1ECDA32000F19D8A /* OompaLoompaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BBD32A1ECDA32000F19D8A /* OompaLoompaTests.swift */; };
 		78BBD3361ECDA32000F19D8A /* OompaLoompaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BBD3351ECDA32000F19D8A /* OompaLoompaUITests.swift */; };
 		78BBD34D1ECDA5D000F19D8A /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BBD34C1ECDA5D000F19D8A /* AppManager.swift */; };
 		78BBD34F1ECDA82200F19D8A /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BBD34E1ECDA82200F19D8A /* AppRouter.swift */; };
+		8DB499D21ED73A76000016C6 /* WorkerListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB499D11ED73A76000016C6 /* WorkerListInteractorTests.swift */; };
+		8DB499DB1ED84753000016C6 /* SnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB499DA1ED84753000016C6 /* SnapshotTestCase.swift */; };
+		8DB499DD1ED847A7000016C6 /* WorkerListSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB499DC1ED847A7000016C6 /* WorkerListSnapshotTests.swift */; };
+		8DB499DF1ED85BF0000016C6 /* TestsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB499DE1ED85BF0000016C6 /* TestsCommon.swift */; };
+		8DB499E21ED85FA5000016C6 /* WorkerListFakeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB499E11ED85FA5000016C6 /* WorkerListFakeModels.swift */; };
 		9841739CE2FE540DF737D61B /* Pods_OompaLoompaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CEB8952CE2E9FCAEA26D94 /* Pods_OompaLoompaUITests.framework */; };
 		F50A8836F46957B0BB4C37FE /* Pods_OompaLoompaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97BB1FB4CA547833B6BE4EC /* Pods_OompaLoompaTests.framework */; };
 /* End PBXBuildFile section */
@@ -67,7 +71,7 @@
 		785FFF261ECDE7C400FF61BA /* WorkerListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerListRouter.swift; sourceTree = "<group>"; };
 		785FFF271ECDE7C400FF61BA /* WorkerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerListViewController.swift; sourceTree = "<group>"; };
 		785FFF281ECDE7C400FF61BA /* WorkerListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerListViewModel.swift; sourceTree = "<group>"; };
-		785FFF301ECDE8FA00FF61BA /* WorkerListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerListCell.swift; sourceTree = "<group>"; };
+		785FFF301ECDE8FA00FF61BA /* WorkerListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkerListCell.swift; path = "../../../Reusable components/Cells/WorkerListCell.swift"; sourceTree = "<group>"; };
 		785FFF331ECDEA1100FF61BA /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		785FFF351ECDECDF00FF61BA /* ViewModelConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelConfigurable.swift; sourceTree = "<group>"; };
 		785FFF371ECEE95600FF61BA /* WorkerDetailBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerDetailBuilder.swift; sourceTree = "<group>"; };
@@ -81,7 +85,6 @@
 		78BBD31C1ECDA32000F19D8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78BBD3211ECDA32000F19D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78BBD3261ECDA32000F19D8A /* OompaLoompaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OompaLoompaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		78BBD32A1ECDA32000F19D8A /* OompaLoompaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OompaLoompaTests.swift; sourceTree = "<group>"; };
 		78BBD32C1ECDA32000F19D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78BBD3311ECDA32000F19D8A /* OompaLoompaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OompaLoompaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78BBD3351ECDA32000F19D8A /* OompaLoompaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OompaLoompaUITests.swift; sourceTree = "<group>"; };
@@ -89,6 +92,11 @@
 		78BBD34C1ECDA5D000F19D8A /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		78BBD34E1ECDA82200F19D8A /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppRouter.swift; path = ../Core/AppRouter.swift; sourceTree = "<group>"; };
 		89E67EFD69AE7BE82915A8A1 /* Pods-OompaLoompaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OompaLoompaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OompaLoompaTests/Pods-OompaLoompaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8DB499D11ED73A76000016C6 /* WorkerListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerListInteractorTests.swift; sourceTree = "<group>"; };
+		8DB499DA1ED84753000016C6 /* SnapshotTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotTestCase.swift; sourceTree = "<group>"; };
+		8DB499DC1ED847A7000016C6 /* WorkerListSnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerListSnapshotTests.swift; sourceTree = "<group>"; };
+		8DB499DE1ED85BF0000016C6 /* TestsCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsCommon.swift; sourceTree = "<group>"; };
+		8DB499E11ED85FA5000016C6 /* WorkerListFakeModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerListFakeModels.swift; sourceTree = "<group>"; };
 		C56FB9A149FF6C15565D4A71 /* Pods-OompaLoompaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OompaLoompaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OompaLoompaTests/Pods-OompaLoompaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D4D9BCC1C194A29DF8D790F0 /* Pods-OompaLoompaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OompaLoompaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OompaLoompaUITests/Pods-OompaLoompaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F1D99EA92BCBCA9078307E86 /* Pods-OompaLoompa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OompaLoompa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OompaLoompa/Pods-OompaLoompa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 				785FFF261ECDE7C400FF61BA /* WorkerListRouter.swift */,
 				785FFF271ECDE7C400FF61BA /* WorkerListViewController.swift */,
 				785FFF281ECDE7C400FF61BA /* WorkerListViewModel.swift */,
+				785FFF301ECDE8FA00FF61BA /* WorkerListCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -200,7 +209,6 @@
 		785FFF2F1ECDE80300FF61BA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				785FFF301ECDE8FA00FF61BA /* WorkerListCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -254,7 +262,10 @@
 		78BBD3291ECDA32000F19D8A /* OompaLoompaTests */ = {
 			isa = PBXGroup;
 			children = (
-				78BBD32A1ECDA32000F19D8A /* OompaLoompaTests.swift */,
+				8DB499E01ED85C11000016C6 /* Common */,
+				8DB499E11ED85FA5000016C6 /* WorkerListFakeModels.swift */,
+				8DB499D11ED73A76000016C6 /* WorkerListInteractorTests.swift */,
+				8DB499DC1ED847A7000016C6 /* WorkerListSnapshotTests.swift */,
 				78BBD32C1ECDA32000F19D8A /* Info.plist */,
 			);
 			path = OompaLoompaTests;
@@ -294,6 +305,15 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8DB499E01ED85C11000016C6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8DB499DA1ED84753000016C6 /* SnapshotTestCase.swift */,
+				8DB499DE1ED85BF0000016C6 /* TestsCommon.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		E36120202755DFC4E44FB356 /* Frameworks */ = {
@@ -616,7 +636,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78BBD32B1ECDA32000F19D8A /* OompaLoompaTests.swift in Sources */,
+				8DB499D21ED73A76000016C6 /* WorkerListInteractorTests.swift in Sources */,
+				8DB499E21ED85FA5000016C6 /* WorkerListFakeModels.swift in Sources */,
+				8DB499DF1ED85BF0000016C6 /* TestsCommon.swift in Sources */,
+				8DB499DD1ED847A7000016C6 /* WorkerListSnapshotTests.swift in Sources */,
+				8DB499DB1ED84753000016C6 /* SnapshotTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

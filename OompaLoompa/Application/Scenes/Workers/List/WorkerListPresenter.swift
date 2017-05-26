@@ -40,7 +40,7 @@ class WorkerListPresenter {
     }
 
     //MARK: - Initializer
-    init(router: WorkerListRouterProtocol, interactor: WorkerListInteractorProtocol, view: WorkerListViewController) {
+    init(router: WorkerListRouterProtocol, interactor: WorkerListInteractorProtocol, view: WorkerListUserInterfaceProtocol) {
         self.router = router
         self.interactor = interactor
         self.view = view

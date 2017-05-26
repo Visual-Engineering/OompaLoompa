@@ -11,13 +11,12 @@ import Deferred
 import OompaLoompaCore
 
 class WorkerListInteractor {
+    
+    var apiProvider: APIClientType
 
-    //MARK: - Singleton
-    static let interactor = WorkerListInteractor()
-    private init() { }
-
-    //MARK: - Stored properties
-    var apiProvider = APIClient.provider
+    init(apiProvider: APIClientType = APIClient.provider) {
+        self.apiProvider = apiProvider
+    }
 }
 
 extension WorkerListInteractor: WorkerListInteractorProtocol {

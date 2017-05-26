@@ -37,7 +37,7 @@ class WorkerListBuilder {
     static func build() -> WorkerListViewController {
         let viewController = WorkerListViewController()
         let router = WorkerListRouter(view: viewController)
-        let interactor = WorkerListInteractor.interactor
+        let interactor = WorkerListInteractor()
         let presenter = WorkerListPresenter(router: router, interactor: interactor, view: viewController)
 
         viewController.presenter = presenter

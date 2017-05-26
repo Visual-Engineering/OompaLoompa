@@ -13,6 +13,7 @@ target 'OompaLoompa' do
   target 'OompaLoompaTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'FBSnapshotTestCase'
   end
 
   target 'OompaLoompaUITests' do

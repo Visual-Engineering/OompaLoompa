@@ -28,6 +28,10 @@ extension Environment: BSWFoundation.Environment {
     }
 }
 
+public protocol APIClientType {
+    func retrieveWorkerList() -> Task<[WorkerModel]>
+}
+
 public class APIClient {
 
     //MARK: - Singleton
@@ -37,8 +41,10 @@ public class APIClient {
     fileprivate let drosky = Drosky(environment: Environment.prod)
 
     static fileprivate let queue = queueForSubmodule("APIClient")
+}
 
-    //MARK: - Public API
+extension APIClient: APIClientType {
+    
     public func retrieveWorkerList() -> Task<[WorkerModel]> {
         let endpoint = WorkersEndpoint.list
         return drosky.performRequest(forEndpoint: endpoint) ≈> processResponse
