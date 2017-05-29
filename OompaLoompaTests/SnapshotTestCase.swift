@@ -70,12 +70,17 @@ class SnapshotTestCase: FBSnapshotTestCase {
     /// as rootViewController so we have a real view life cycle.
     /// Without this, viewWillAppear will not be called and it's necessary
     /// because that's where we call configureView()
-    func verifyViewController(_ controller: UIViewController, afterDelay: TimeInterval = 0.05) {
+    func verifyViewController(_ controller: UIViewController, afterDelay: TimeInterval = 0.05, tolerance: CGFloat = 0.0) {
         rootViewController = controller
-        verifyView(controller.view, afterDelay: afterDelay)
+        verifyView(controller.view, afterDelay: afterDelay, tolerance: tolerance)
+    }
+
+    func verifyViewControllerInWidndow(_ controller: UIViewController, afterDelay: TimeInterval = 0.05, tolerance: CGFloat = 0.0) {
+        rootViewController = controller
+        verifyView(UIApplication.shared.keyWindow!, afterDelay: afterDelay, tolerance: tolerance)
     }
     
-    func verifyView(_ view: UIView, afterDelay: TimeInterval = 0.05) {
+    func verifyView(_ view: UIView, afterDelay: TimeInterval = 0.05, tolerance: CGFloat = 0.0) {
         
         view.setNeedsLayout()
         view.layoutIfNeeded()
@@ -83,7 +88,7 @@ class SnapshotTestCase: FBSnapshotTestCase {
         let exp = expectation(description: "verify view")
         let deadlineTime = DispatchTime.now() + .milliseconds(Int(afterDelay * 1000))
         DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-            self.FBSnapshotVerifyView(view)
+            self.FBSnapshotVerifyView(view, tolerance: tolerance)
             exp.fulfill()
         }
         waitForExpectations(timeout: 1000) { _ in }

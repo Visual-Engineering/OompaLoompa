@@ -12,10 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private lazy var appManager = AppManager()
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        return appManager.application(application, didFinishLaunchingWithOptions: launchOptions)
+
+        if let _ = NSClassFromString("XCTest") {
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            let rootViewController = UIViewController()
+            window.rootViewController = rootViewController
+            window.backgroundColor = .white
+            window.makeKeyAndVisible()
+            self.window = window
+
+            return true
+        } else {
+            return appManager.application(application, didFinishLaunchingWithOptions: launchOptions)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

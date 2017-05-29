@@ -18,4 +18,12 @@ class WorkerListSnapshotTests: SnapshotTestCase {
         cell.frame = CGRect(origin: .zero, size: cell.fitSize(widthConstraint:currentWindow.bounds.width))
         verifyView(cell)
     }
+
+    func testSnapshotWorkerListViewControllerLoadingState() {
+//        recordMode = true
+        let viewController = WorkerListViewController()
+        let presenter = WorkerListPresenterSpy(view: viewController, stateToTest: .loading)
+        viewController.presenter = presenter
+        verifyViewControllerInWidndow(viewController, afterDelay: 1.0, tolerance: 0.0)
+    }
 }

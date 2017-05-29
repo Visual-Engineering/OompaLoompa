@@ -3,3 +3,6 @@ OompaLoompa.xcodeproj/xcuserdata/agarcia.xcuserdatad/xcschemes/xcschememanagemen
 OompaLoompa.xcworkspace/xcuserdata/agarcia.xcuserdatad/UserInterfaceState.xcuserstate
 OompaLoompa.xcworkspace/xcuserdata/agarcia.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 Pods/**
+OompaLoompaTests/FailureDiffs/OompaLoompaTests.WorkerListSnapshotTests/diff_testSnapshotWorkerListCell@2x.png
+OompaLoompaTests/FailureDiffs/OompaLoompaTests.WorkerListSnapshotTests/failed_testSnapshotWorkerListCell@2x.png
+OompaLoompaTests/FailureDiffs/OompaLoompaTests.WorkerListSnapshotTests/reference_testSnapshotWorkerListCell@2x.png

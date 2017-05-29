@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0110C6124FFCBA9B09F8C054 /* Pods_OompaLoompa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39300E0C686386B23FA528CD /* Pods_OompaLoompa.framework */; };
+		78448A5F1EDC650F005F6423 /* WorkerListMockObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78448A5E1EDC650F005F6423 /* WorkerListMockObjects.swift */; };
 		785FFEF91ECDE51800FF61BA /* AppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FFEF81ECDE51800FF61BA /* AppRootViewController.swift */; };
 		785FFEFC1ECDE59D00FF61BA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FFEFB1ECDE59D00FF61BA /* UIView.swift */; };
 		785FFF1E1ECDE7A000FF61BA /* Scene+Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FFF1D1ECDE7A000FF61BA /* Scene+Commons.swift */; };
@@ -31,7 +32,7 @@
 		78BBD3361ECDA32000F19D8A /* OompaLoompaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BBD3351ECDA32000F19D8A /* OompaLoompaUITests.swift */; };
 		78BBD34D1ECDA5D000F19D8A /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BBD34C1ECDA5D000F19D8A /* AppManager.swift */; };
 		78BBD34F1ECDA82200F19D8A /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BBD34E1ECDA82200F19D8A /* AppRouter.swift */; };
-		8DB499D21ED73A76000016C6 /* WorkerListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB499D11ED73A76000016C6 /* WorkerListInteractorTests.swift */; };
+		8DB499D21ED73A76000016C6 /* WorkerListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB499D11ED73A76000016C6 /* WorkerListTests.swift */; };
 		8DB499DB1ED84753000016C6 /* SnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB499DA1ED84753000016C6 /* SnapshotTestCase.swift */; };
 		8DB499DD1ED847A7000016C6 /* WorkerListSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB499DC1ED847A7000016C6 /* WorkerListSnapshotTests.swift */; };
 		8DB499DF1ED85BF0000016C6 /* TestsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB499DE1ED85BF0000016C6 /* TestsCommon.swift */; };
@@ -62,6 +63,7 @@
 		39300E0C686386B23FA528CD /* Pods_OompaLoompa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OompaLoompa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCE96992AF641C90466417 /* Pods-OompaLoompaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OompaLoompaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OompaLoompaUITests/Pods-OompaLoompaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F6BA08FFF3DBF7EA8313D33 /* Pods-OompaLoompa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OompaLoompa.release.xcconfig"; path = "Pods/Target Support Files/Pods-OompaLoompa/Pods-OompaLoompa.release.xcconfig"; sourceTree = "<group>"; };
+		78448A5E1EDC650F005F6423 /* WorkerListMockObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerListMockObjects.swift; sourceTree = "<group>"; };
 		785FFEF81ECDE51800FF61BA /* AppRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppRootViewController.swift; path = ../Core/AppRootViewController.swift; sourceTree = "<group>"; };
 		785FFEFB1ECDE59D00FF61BA /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		785FFF1D1ECDE7A000FF61BA /* Scene+Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Scene+Commons.swift"; path = "../Scene+Commons.swift"; sourceTree = "<group>"; };
@@ -92,7 +94,7 @@
 		78BBD34C1ECDA5D000F19D8A /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		78BBD34E1ECDA82200F19D8A /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppRouter.swift; path = ../Core/AppRouter.swift; sourceTree = "<group>"; };
 		89E67EFD69AE7BE82915A8A1 /* Pods-OompaLoompaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OompaLoompaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OompaLoompaTests/Pods-OompaLoompaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8DB499D11ED73A76000016C6 /* WorkerListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerListInteractorTests.swift; sourceTree = "<group>"; };
+		8DB499D11ED73A76000016C6 /* WorkerListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerListTests.swift; sourceTree = "<group>"; };
 		8DB499DA1ED84753000016C6 /* SnapshotTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotTestCase.swift; sourceTree = "<group>"; };
 		8DB499DC1ED847A7000016C6 /* WorkerListSnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerListSnapshotTests.swift; sourceTree = "<group>"; };
 		8DB499DE1ED85BF0000016C6 /* TestsCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsCommon.swift; sourceTree = "<group>"; };
@@ -263,10 +265,11 @@
 			isa = PBXGroup;
 			children = (
 				8DB499E01ED85C11000016C6 /* Common */,
-				8DB499E11ED85FA5000016C6 /* WorkerListFakeModels.swift */,
-				8DB499D11ED73A76000016C6 /* WorkerListInteractorTests.swift */,
-				8DB499DC1ED847A7000016C6 /* WorkerListSnapshotTests.swift */,
 				78BBD32C1ECDA32000F19D8A /* Info.plist */,
+				8DB499E11ED85FA5000016C6 /* WorkerListFakeModels.swift */,
+				8DB499D11ED73A76000016C6 /* WorkerListTests.swift */,
+				78448A5E1EDC650F005F6423 /* WorkerListMockObjects.swift */,
+				8DB499DC1ED847A7000016C6 /* WorkerListSnapshotTests.swift */,
 			);
 			path = OompaLoompaTests;
 			sourceTree = "<group>";
@@ -636,7 +639,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DB499D21ED73A76000016C6 /* WorkerListInteractorTests.swift in Sources */,
+				78448A5F1EDC650F005F6423 /* WorkerListMockObjects.swift in Sources */,
+				8DB499D21ED73A76000016C6 /* WorkerListTests.swift in Sources */,
 				8DB499E21ED85FA5000016C6 /* WorkerListFakeModels.swift in Sources */,
 				8DB499DF1ED85BF0000016C6 /* TestsCommon.swift in Sources */,
 				8DB499DD1ED847A7000016C6 /* WorkerListSnapshotTests.swift in Sources */,
