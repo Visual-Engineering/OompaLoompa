@@ -14,10 +14,19 @@ final class WorkerListViewController: UIViewController {
     //MARK: - Stored properties
     var presenter: WorkerListPresenterProtocol!
 
+    fileprivate lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.delegate = self
+        searchBar.sizeToFit()
+
+        return searchBar
+    }()
+
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.estimatedRowHeight = 300
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableHeaderView = self.searchBar
 
         tableView.register(WorkerListCell.self, forCellReuseIdentifier: WorkerListCell.reuseIdentifier)
         tableView.delegate = self
@@ -95,4 +104,11 @@ extension WorkerListViewController: UITableViewDelegate {
         presenter.didSelectElement(at: indexPath.row)
     }
 
+}
+
+extension WorkerListViewController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter.didFilter(withText: searchText)
+    }
 }

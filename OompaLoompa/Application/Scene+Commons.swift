@@ -24,14 +24,6 @@ extension LoadingState {
                 return nil
             }
         }
-
-        mutating set {
-            guard let value = newValue else {
-                self = .error(AppError.unknown)
-                return
-            }
-            self = .loaded(viewModel: value)
-        }
     }
 }
 

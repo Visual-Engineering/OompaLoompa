@@ -10,6 +10,12 @@ import XCTest
 @testable import OompaLoompa
 
 class WorkerListSnapshotTests: SnapshotTestCase {
+
+    override func setUp() {
+        super.setUp()
+        isDeviceAgnostic = true
+//        recordMode = true
+    }
   
     func testSnapshotWorkerListCell() {
         let cell = WorkerListCell()
@@ -21,15 +27,22 @@ class WorkerListSnapshotTests: SnapshotTestCase {
 
     func testSnapshotWorkerListViewControllerLoadingState() {
         let viewController = WorkerListViewController()
-        let presenter = WorkerListPresenterSpy(view: viewController, stateToTest: .loading)
+        let presenter = WorkerListPresenterFake(view: viewController, state: .loading)
         viewController.presenter = presenter
-        verifyViewControllerInWidndow(viewController, afterDelay: 1.0, tolerance: 0.0)
+        verifyViewControllerInWidndow(viewController, afterDelay: 1.0)
     }
 
     func testSnapshotWorkerListViewControllerLoadedState() {
         let viewController = WorkerListViewController()
-        let presenter = WorkerListPresenterSpy(view: viewController, stateToTest: .loaded)
+        let presenter = WorkerListPresenterFake(view: viewController, state: .loaded)
         viewController.presenter = presenter
-        verifyViewControllerInWidndow(viewController, afterDelay: 1.0, tolerance: 0.0)
+        verifyViewControllerInWidndow(viewController, afterDelay: 1.0)
+    }
+
+    func testDebugWorkerListViewController() {
+        let viewController = WorkerListViewController()
+        let presenter = WorkerListPresenterFake(view: viewController, state: .loaded)
+        viewController.presenter = presenter
+        debugViewController(viewController)
     }
 }

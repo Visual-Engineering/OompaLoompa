@@ -80,7 +80,7 @@ class WorkerListRouterSpy: WorkerListRouterProtocol {
     }
 }
 
-class WorkerListPresenterSpy: WorkerListPresenterProtocol {
+class WorkerListPresenterFake: WorkerListPresenterProtocol {
 
     enum WorkerListUserInterfacePresenterState {
         case loading
@@ -88,18 +88,18 @@ class WorkerListPresenterSpy: WorkerListPresenterProtocol {
     }
 
     var called: Bool = false
-    var stateToTest: WorkerListUserInterfacePresenterState
+    var state: WorkerListUserInterfacePresenterState
     var view: WorkerListUserInterfaceProtocol
 
-    init(view: WorkerListUserInterfaceProtocol, stateToTest: WorkerListUserInterfacePresenterState) {
+    init(view: WorkerListUserInterfaceProtocol, state: WorkerListUserInterfacePresenterState) {
         self.view = view
-        self.stateToTest = stateToTest
+        self.state = state
     }
 
     func viewDidLoad() {
         called = true
 
-        switch stateToTest {
+        switch state {
         case .loading:
             view.showActivityIndicator()
         case .loaded:

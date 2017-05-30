@@ -23,7 +23,12 @@ class WorkerDetailPresenter {
         }
 
         set {
-            state.viewModel = newValue
+            guard let value = newValue else {
+                state = .error(AppError.unknown)
+                return
+            }
+
+            state = .loaded(viewModel: value)
         }
     }
 

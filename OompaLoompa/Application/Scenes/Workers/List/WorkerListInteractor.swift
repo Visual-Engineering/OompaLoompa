@@ -24,4 +24,8 @@ extension WorkerListInteractor: WorkerListInteractorProtocol {
     func retrieveData() -> Task<[WorkerModel]> {
         return apiProvider.retrieveWorkerList()
     }
+
+//    func filterData(byName name: String) -> Task<[WorkerModel]> {
+//        return []
+//    }
 }

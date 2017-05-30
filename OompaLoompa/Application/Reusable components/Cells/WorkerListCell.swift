@@ -19,7 +19,7 @@ class WorkerListCell: UITableViewCell {
     private let infoStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-//        stackView.distribution = .fill
+        stackView.distribution = .equalSpacing
         stackView.alignment = .trailing
 
         return stackView

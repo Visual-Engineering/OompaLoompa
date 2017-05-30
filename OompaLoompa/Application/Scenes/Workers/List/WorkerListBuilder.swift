@@ -15,6 +15,7 @@ protocol WorkerListPresenterProtocol {
     func numberOfRows() -> Int
     func element(at index: Int) -> WorkerViewModel?
     func didSelectElement(at index: Int)
+    func didFilter(withText text: String)
 }
 
 protocol WorkerListInteractorProtocol {

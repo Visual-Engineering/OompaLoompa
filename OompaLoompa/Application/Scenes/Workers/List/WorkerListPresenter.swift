@@ -35,7 +35,12 @@ class WorkerListPresenter {
         }
 
         set {
-            state.viewModel = newValue
+            guard let value = newValue else {
+                state = .error(AppError.unknown)
+                return
+            }
+
+            state = .loaded(viewModel: value)
         }
     }
 
@@ -68,14 +73,19 @@ extension WorkerListPresenter: WorkerListPresenterProtocol {
     }
 
     func numberOfRows() -> Int {
-        return viewModel?.workers.count ?? 0
+        guard let viewModel = viewModel else {
+            return 0
+        }
+
+        return viewModel.numberOfRows()
     }
 
     func element(at index: Int) -> WorkerViewModel? {
-        guard let viewModel = viewModel, index < numberOfRows() else {
+        guard let viewModel = viewModel else {
             return nil
         }
-        return viewModel.workers[index]
+
+        return viewModel.worker(at: index)
     }
 
     func didSelectElement(at index: Int) {
@@ -84,5 +94,15 @@ extension WorkerListPresenter: WorkerListPresenterProtocol {
         }
 
         router.navigateToWorkerDetailScene(withViewModel: element)
+    }
+
+    func didFilter(withText text: String) {
+        if text.isEmpty {
+            viewModel?.resetFilter()
+        } else {
+            viewModel?.filterWorkers(byText: text)
+        }
+
+        view.reloadTableView()
     }
 }

@@ -7,7 +7,7 @@ target 'OompaLoompa' do
 
   # Pods for OompaLoompa
   pod 'OompaLoompaCore',    :path => 'Frameworks/OompaLoompaCore'
-  pod 'NVActivityIndicatorView'
+  pod 'NVActivityIndicatorView', :inhibit_warnings => true
   pod 'HanekeSwift', :git => 'https://github.com/Haneke/HanekeSwift.git', :commit => '74f34c1c1845907927de5e71ea621399c1f603e0'
   
   target 'OompaLoompaTests' do
