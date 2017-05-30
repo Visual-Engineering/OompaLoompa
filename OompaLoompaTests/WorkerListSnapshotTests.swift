@@ -20,9 +20,15 @@ class WorkerListSnapshotTests: SnapshotTestCase {
     }
 
     func testSnapshotWorkerListViewControllerLoadingState() {
-//        recordMode = true
         let viewController = WorkerListViewController()
         let presenter = WorkerListPresenterSpy(view: viewController, stateToTest: .loading)
+        viewController.presenter = presenter
+        verifyViewControllerInWidndow(viewController, afterDelay: 1.0, tolerance: 0.0)
+    }
+
+    func testSnapshotWorkerListViewControllerLoadedState() {
+        let viewController = WorkerListViewController()
+        let presenter = WorkerListPresenterSpy(view: viewController, stateToTest: .loaded)
         viewController.presenter = presenter
         verifyViewControllerInWidndow(viewController, afterDelay: 1.0, tolerance: 0.0)
     }

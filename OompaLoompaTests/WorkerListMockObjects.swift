@@ -103,18 +103,20 @@ class WorkerListPresenterSpy: WorkerListPresenterProtocol {
         case .loading:
             view.showActivityIndicator()
         case .loaded:
-            break
+            view.showActivityIndicator()
+            view.dismissActivityIndicator()
+            view.reloadTableView()
         }
     }
 
     func numberOfRows() -> Int {
         called = true
-        return 0
+        return 5
     }
 
     func element(at index: Int) -> WorkerViewModel? {
         called = true
-        return nil
+        return WorkerViewModel.fake
     }
 
     func didSelectElement(at index: Int) {

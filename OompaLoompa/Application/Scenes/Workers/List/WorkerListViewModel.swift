@@ -13,7 +13,6 @@ struct WorkerListViewModel {
 
     //MARK: - Stored properties
     let workers: [WorkerViewModel]
-
 }
 
 struct WorkerViewModel {
