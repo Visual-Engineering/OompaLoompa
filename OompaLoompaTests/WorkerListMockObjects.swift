@@ -12,7 +12,7 @@ import Deferred
 
 //MARK: - Spies/Mocks...
 
-class APIClientSpy: APIClientType {
+class APIClientSpy: APIProviderProtocol {
 
     var called: Bool = false
 
@@ -121,5 +121,9 @@ class WorkerListPresenterFake: WorkerListPresenterProtocol {
 
     func didSelectElement(at index: Int) {
 
+    }
+
+    func didFilter(withText text: String) {
+        
     }
 }

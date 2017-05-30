@@ -12,9 +12,9 @@ import OompaLoompaCore
 
 class WorkerListInteractor {
     
-    var apiProvider: APIClientType
+    var apiProvider: APIProviderProtocol
 
-    init(apiProvider: APIClientType = APIClient.provider) {
+    init(apiProvider: APIProviderProtocol = APIProvider.provider) {
         self.apiProvider = apiProvider
     }
 }

@@ -28,22 +28,22 @@ extension Environment: BSWFoundation.Environment {
     }
 }
 
-public protocol APIClientType {
+public protocol APIProviderProtocol {
     func retrieveWorkerList() -> Task<[WorkerModel]>
 }
 
-public class APIClient {
+public class APIProvider {
 
     //MARK: - Singleton
-    public static let provider = APIClient()
+    public static let provider = APIProvider()
     private init() { }
 
     fileprivate let drosky = Drosky(environment: Environment.prod)
 
-    static fileprivate let queue = queueForSubmodule("APIClient")
+    static fileprivate let queue = queueForSubmodule("APIProvider")
 }
 
-extension APIClient: APIClientType {
+extension APIProvider: APIProviderProtocol {
     
     public func retrieveWorkerList() -> Task<[WorkerModel]> {
         let endpoint = WorkersEndpoint.list
@@ -53,12 +53,12 @@ extension APIClient: APIClientType {
 
 fileprivate let jsonSerializationOptions = JSONSerialization.ReadingOptions.allowFragments
 
-extension APIClient {
+extension APIProvider {
 
     fileprivate func processResponse<T: Decodable>(_ response: DroskyResponse) -> Task<T> {
         let deferred = Deferred<TaskResult<T>>()
 
-        APIClient.queue.addOperation {
+        APIProvider.queue.addOperation {
             switch response.statusCode {
             case 200,
                  201,
@@ -75,7 +75,7 @@ extension APIClient {
     fileprivate func processResponse<T: Decodable>(_ response: DroskyResponse) -> Task<[T]> {
         let deferred = Deferred<TaskResult<[T]>>()
 
-        APIClient.queue.addOperation {
+        APIProvider.queue.addOperation {
             switch response.statusCode {
             case 200,
                  201:
@@ -91,7 +91,7 @@ extension APIClient {
     fileprivate func processResponse(_ response: DroskyResponse) -> Task<()> {
         let deferred = Deferred<TaskResult<()>>()
 
-        APIClient.queue.addOperation {
+        APIProvider.queue.addOperation {
             switch response.statusCode {
             case 200,
                  201,

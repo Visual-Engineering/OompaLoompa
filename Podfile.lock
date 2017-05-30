@@ -17,6 +17,12 @@ PODS:
   - NVActivityIndicatorView (3.5.2)
   - OompaLoompaCore (0.1.0):
     - BSWFoundation
+    - RealmSwift
+  - Realm (2.4.4):
+    - Realm/Headers (= 2.4.4)
+  - Realm/Headers (2.4.4)
+  - RealmSwift (2.4.4):
+    - Realm (= 2.4.4)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -45,8 +51,10 @@ SPEC CHECKSUMS:
   HanekeSwift: 4113367892828e7700d24a384027de6ebc79aad1
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
   NVActivityIndicatorView: 8c10abd410a0657afd21aa853373e1a3cfc25e7f
-  OompaLoompaCore: e5db1f6d1064f5e1374057f1d1996e293dbb0686
+  OompaLoompaCore: f112cbe00d3c558a7d6f7aef7fcc4dac52b94f3a
+  Realm: 5a280a1f5a9a3c267bebf4f41ee47911137703d7
+  RealmSwift: 0c02b9f2d4be4301c497ed10e53a0580584eb1dd
 
-PODFILE CHECKSUM: 6dea44857baf22a1aa81f151352ba6d7cdfdd01f
+PODFILE CHECKSUM: 25fa476c538779eaa4ded28dcea5378d68d4a4eb
 
 COCOAPODS: 1.2.0
