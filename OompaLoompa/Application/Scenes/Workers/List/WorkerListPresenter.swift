@@ -15,7 +15,7 @@ class WorkerListPresenter {
     fileprivate let interactor: WorkerListInteractorProtocol
     fileprivate unowned let view: WorkerListUserInterfaceProtocol
 
-    var state: LoadingState<WorkerListViewModel> = .loading {
+    fileprivate var state: LoadingState<WorkerListViewModel> = .loading {
         didSet {
             switch state {
             case .loading:
@@ -23,6 +23,8 @@ class WorkerListPresenter {
             case .loaded:
                 self.view.dismissActivityIndicator()
                 self.view.reloadTableView()
+            case .updating:
+                break
             case .error:
                 self.view.dismissActivityIndicator()
             }
@@ -30,17 +32,13 @@ class WorkerListPresenter {
     }
 
     var viewModel: WorkerListViewModel? {
-        get {
-            return state.viewModel
-        }
-
-        set {
-            guard let value = newValue else {
+        didSet {
+            guard let viewModel = viewModel else {
                 state = .error(AppError.unknown)
                 return
             }
 
-            state = .loaded(viewModel: value)
+            state = .loaded(viewModel: viewModel)
         }
     }
 
@@ -50,26 +48,13 @@ class WorkerListPresenter {
         self.interactor = interactor
         self.view = view
     }
-
-    //MARK: - Public API
-
 }
 
 extension WorkerListPresenter: WorkerListPresenterProtocol {
 
     func viewDidLoad() {
-        view.showActivityIndicator()
-        
-        interactor.retrieveData().map(upon: .main) { (workerModelArray) -> WorkerListViewModel in
-            return WorkerListViewModel(workers: workerModelArray.map { $0.toViewModel() })
-        }.upon(.main) { (result) in
-            switch result {
-            case .failure(let error):
-                self.state = .error(error)
-            case .success(let workers):
-                self.viewModel = workers
-            }
-        }
+        state = .loading
+        retrieveData()
     }
 
     func numberOfRows() -> Int {
@@ -97,12 +82,29 @@ extension WorkerListPresenter: WorkerListPresenterProtocol {
     }
 
     func didFilter(withText text: String) {
-        if text.isEmpty {
-            viewModel?.resetFilter()
-        } else {
-            viewModel?.filterWorkers(byText: text)
-        }
+        retrieveData(withFilter: text)
+    }
 
-        view.reloadTableView()
+    func didRefresh(withFilter text: String = "", completion: @escaping (Void) -> Void) {
+        state = .updating
+        retrieveData(withFilter: text, invalidateCache: true, completion: completion)
+    }
+
+    //MARK: - Private API
+    private func retrieveData(withFilter text: String = "",
+                              invalidateCache: Bool = false,
+                              completion: @escaping (Void) -> Void = { }) {
+        interactor.retrieveData(withFilter: text, invalidateCache: invalidateCache).map(upon: .main) { (workers) -> WorkerListViewModel in
+            return WorkerListViewModel(workers: workers.map { $0.toViewModel() }, state: text.isEmpty ? .noFilter : .filtered)
+            }.upon(.main) { (result) in
+                switch result {
+                case .failure(let error):
+                    self.state = .error(error)
+                case .success(let workers):
+                    self.viewModel = workers
+                }
+
+                completion()
+        }
     }
 }

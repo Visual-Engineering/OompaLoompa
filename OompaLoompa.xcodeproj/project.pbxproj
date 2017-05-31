@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0110C6124FFCBA9B09F8C054 /* Pods_OompaLoompa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39300E0C686386B23FA528CD /* Pods_OompaLoompa.framework */; };
+		7829C1B21EDEE9A6001F450B /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829C1B11EDEE9A6001F450B /* UIScrollView.swift */; };
 		78448A5F1EDC650F005F6423 /* WorkerListMockObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78448A5E1EDC650F005F6423 /* WorkerListMockObjects.swift */; };
 		785FFEF91ECDE51800FF61BA /* AppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FFEF81ECDE51800FF61BA /* AppRootViewController.swift */; };
 		785FFEFC1ECDE59D00FF61BA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FFEFB1ECDE59D00FF61BA /* UIView.swift */; };
@@ -63,6 +64,7 @@
 		39300E0C686386B23FA528CD /* Pods_OompaLoompa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OompaLoompa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCE96992AF641C90466417 /* Pods-OompaLoompaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OompaLoompaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OompaLoompaUITests/Pods-OompaLoompaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F6BA08FFF3DBF7EA8313D33 /* Pods-OompaLoompa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OompaLoompa.release.xcconfig"; path = "Pods/Target Support Files/Pods-OompaLoompa/Pods-OompaLoompa.release.xcconfig"; sourceTree = "<group>"; };
+		7829C1B11EDEE9A6001F450B /* UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		78448A5E1EDC650F005F6423 /* WorkerListMockObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerListMockObjects.swift; sourceTree = "<group>"; };
 		785FFEF81ECDE51800FF61BA /* AppRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppRootViewController.swift; path = ../Core/AppRootViewController.swift; sourceTree = "<group>"; };
 		785FFEFB1ECDE59D00FF61BA /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				785FFEFB1ECDE59D00FF61BA /* UIView.swift */,
+				7829C1B11EDEE9A6001F450B /* UIScrollView.swift */,
 			);
 			name = Extensions;
 			path = ../Core/Extensions;
@@ -620,6 +623,7 @@
 				78BBD34D1ECDA5D000F19D8A /* AppManager.swift in Sources */,
 				785FFF2E1ECDE7C400FF61BA /* WorkerListViewModel.swift in Sources */,
 				785FFF341ECDEA1100FF61BA /* ReusableView.swift in Sources */,
+				7829C1B21EDEE9A6001F450B /* UIScrollView.swift in Sources */,
 				785FFF421ECEE95600FF61BA /* WorkerDetailViewModel.swift in Sources */,
 				785FFF361ECDECDF00FF61BA /* ViewModelConfigurable.swift in Sources */,
 				785FFF291ECDE7C400FF61BA /* WorkerListBuilder.swift in Sources */,
@@ -806,8 +810,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.visualengin.baseproject.OompaLoompaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG -Onone";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OompaLoompa.app/OompaLoompa";
 			};

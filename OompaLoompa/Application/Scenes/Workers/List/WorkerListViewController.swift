@@ -33,6 +33,10 @@ final class WorkerListViewController: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
 
+        tableView.addRefresh { completion in
+            self.presenter.didRefresh(withFilter: self.searchBar.text ?? "", completion: completion)
+        }
+
         return tableView
     }()
 
@@ -103,7 +107,6 @@ extension WorkerListViewController: UITableViewDelegate {
 
         presenter.didSelectElement(at: indexPath.row)
     }
-
 }
 
 extension WorkerListViewController: UISearchBarDelegate {

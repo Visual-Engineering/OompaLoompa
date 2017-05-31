@@ -16,10 +16,11 @@ protocol WorkerListPresenterProtocol {
     func element(at index: Int) -> WorkerViewModel?
     func didSelectElement(at index: Int)
     func didFilter(withText text: String)
+    func didRefresh(withFilter text: String, completion: @escaping (Void) -> Void)
 }
 
 protocol WorkerListInteractorProtocol {
-    func retrieveData() -> Task<[WorkerModel]>
+    func retrieveData(withFilter filter: String, invalidateCache: Bool) -> Task<[WorkerModel]>
 }
 
 protocol WorkerListUserInterfaceProtocol: class {

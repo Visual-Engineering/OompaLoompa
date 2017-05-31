@@ -14,51 +14,31 @@ struct WorkerListViewModel {
     //MARK: - Stored properties
     fileprivate let workers: [WorkerViewModel]
     var state: FilteredState
+
+    //MARK: - Initializer
+    init(workers: [WorkerViewModel], state: FilteredState = .noFilter) {
+        self.workers = workers
+        self.state = state
+    }
 }
 
 enum FilteredState {
     case noFilter
-    case filtered(workers: [WorkerViewModel])
+    case filtered
 }
 
 extension WorkerListViewModel {
 
-    init(workers: [WorkerViewModel]) {
-        self.state = .noFilter
-        self.workers = workers
-    }
-
     func numberOfRows() -> Int {
-        switch state {
-        case .filtered(let filteredWorkers):
-            return filteredWorkers.count
-        case .noFilter:
-            return workers.count
-        }
+        return workers.count
     }
 
     func worker(at index: Int) -> WorkerViewModel? {
         guard index < numberOfRows() else {
             return nil
         }
-        switch state {
-        case .filtered(let filteredWorkers):
-            return filteredWorkers[index]
-        case .noFilter:
-            return self.workers[index]
-        }
-    }
 
-    mutating func filterWorkers(byText text: String) {
-        let filteredWorkers = workers.filter { $0.name.lowercased().contains(text.lowercased()) ||
-                                           $0.email.lowercased().contains(text.lowercased()) ||
-                                           $0.profession.lowercased().contains(text.lowercased())}
-
-        state = .filtered(workers: filteredWorkers)
-    }
-
-    mutating func resetFilter() {
-        state = .noFilter
+        return self.workers[index]
     }
 }
 

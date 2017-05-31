@@ -8,9 +8,17 @@
 
 import Foundation
 
+protocol LoadableProtocol {
+    associatedtype VM
+
+    var viewModel: VM? { get set }
+    var state: LoadingState<VM> { get set }
+}
+
 enum LoadingState<VM> {
     case loading
     case loaded(viewModel: VM)
+    case updating
     case error(Error)
 }
 
