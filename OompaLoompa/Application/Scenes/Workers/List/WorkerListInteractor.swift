@@ -11,18 +11,20 @@ import Deferred
 import OompaLoompaCore
 
 class WorkerListInteractor {
-    
-    var apiProvider: APIProviderProtocol
 
-    init(apiProvider: APIProviderProtocol = APIProvider.provider) {
-        self.apiProvider = apiProvider
+    //MARK: - Stored properties
+    let repository: WorkersRepositoryProtocol
+
+    //MARK: - Initializer
+    init(repository: WorkersRepositoryProtocol = WorkersRepository()) {
+        self.repository = repository
     }
 }
 
 extension WorkerListInteractor: WorkerListInteractorProtocol {
 
     func retrieveData() -> Task<[WorkerModel]> {
-        return apiProvider.retrieveWorkerList()
+        return repository.retrieveWorkerList(invalidateCache: false)
     }
 
 //    func filterData(byName name: String) -> Task<[WorkerModel]> {

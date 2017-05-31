@@ -9,23 +9,42 @@
 import Foundation
 import Deferred
 
-class WorkersRepository {
+public protocol WorkersRepositoryProtocol {
+    func retrieveWorkerList(invalidateCache: Bool) -> Task<[WorkerModel]>
+}
+
+public class WorkersRepository {
 
     //MARK: - Stored properties
-    fileprivate let apiProvider: APIProvider
-    //fileprivat let sessionProvider =...
+    fileprivate let apiProvider: APIProviderProtocol
+    fileprivate let databaseProvider: DatabaseProviderProtocol
 
     //MARK: - Initializer
-    init(apiProvider: APIProvider = APIProvider.provider) {
+    public init(apiProvider: APIProviderProtocol = APIProvider.provider,
+                databaseProvider: DatabaseProviderProtocol = RealmDataBaseProvider.provider) {
         self.apiProvider = apiProvider
+        self.databaseProvider = databaseProvider
     }
+}
 
-    //MARK: - Public API
-    func retrieveWorkerList(invalidateCache: Bool = false) -> Task<[WorkerModel]> {
+extension WorkersRepository: WorkersRepositoryProtocol {
+
+    public func retrieveWorkerList(invalidateCache: Bool) -> Task<[WorkerModel]> {
+        var workers = [WorkerModel]()
+
         if invalidateCache {
-            return apiProvider.retrieveWorkerList()
+            databaseProvider.reset()
         } else {
-            return apiProvider.retrieveWorkerList()
+            workers = databaseProvider.read()
+        }
+
+        if workers.isEmpty {
+            return apiProvider.retrieveWorkerList().map(upon: .main, transform: { [weak self] (workers) -> [WorkerModel] in
+                self?.databaseProvider.write(elements: workers)
+                return workers
+            })
+        } else {
+            return Task(success: workers)
         }
     }
 }
